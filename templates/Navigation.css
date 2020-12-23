@@ -1,0 +1,13 @@
+li{
+    display:inline;
+    padding:10px;
+    margin:40px;
+    
+   
+   }
+    body{margin:0;}
+.List{
+    font-family: cursive;
+    display: flex;
+    justify-content: flex-end;
+}

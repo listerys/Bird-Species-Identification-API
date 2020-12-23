@@ -1,0 +1,120 @@
+{% extends "base.html" %} {% block content %}
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<style>
+    result{
+        font-size: 40px;
+        color: aliceblue;
+    }
+    .sub-header{
+        font-size: 40px;
+        font-family: cursive;
+        text-align: center;
+        color: aliceblue;
+    }
+    .sub-header1{
+        font-size: 50px;
+        font-family: cursive;
+        text-align: center;
+        color: aliceblue;
+    }
+    h1{
+        font-size: 50px;
+        font-family: cursive;
+        text-align: center;
+        color: aliceblue;
+    }
+    h3{
+        font-size: 40px;
+        position: relative;
+        font-family: cursive;
+        text-align: center;
+        color: aliceblue;
+    }
+    .upload-label{
+
+        background: #673AB7;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 8%;
+    height: 20px;
+    display: flex;
+        justify-content: center;
+        font-size: 20px;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+        }
+        body{
+            background-image:url(kl.jpg);
+            background-size:cover;
+        }
+        .predict-button{
+            display: flex;
+            justify-content: center;
+        }
+        .btn{
+            background: #673AB7;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 8%;
+    height: 30px;
+    display: flex;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 20px;
+        color: aliceblue;
+        transition: all .4s;
+        }
+        .btn:hover{
+            background: #34495E;
+    color: #39D2B4;
+        }
+        .img-preview{
+            margin-left: 625px;
+        }
+      .imagePreview{
+        display: flex;
+            justify-content: center;
+            margin-left: 100px;
+        margin-right: auto;
+      }
+      .image-section{
+        text-align: center;
+      }
+</style>
+<br><br>
+<div class="sub-header1">Welcome to the Bird Species Identification API</div><br><br>
+<div class="sub-header">This API will detect the species of the bird.</div><br><br>
+
+<div class="wrapper">
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose File
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+<br>
+<br>
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <br><br>
+        <div class="predict-button">
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+</div>
+
+{% endblock %}
